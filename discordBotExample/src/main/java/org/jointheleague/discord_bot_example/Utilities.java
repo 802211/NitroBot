@@ -12,16 +12,13 @@ public class Utilities {
 	private Utilities() {
 	}
 
-	/**
-	 * 
-	 * @return list of bots
-	 */
 	public static Map<String, BotInfo> loadBotsFromJson() {
 		try (Reader reader = new InputStreamReader(
 				Utilities.class.getClassLoader().getResourceAsStream("config.json"))) {
 			System.out.println("Loading bots");
 			Gson gson = new GsonBuilder().create();
-			return gson.fromJson(reader, new TypeToken<Map<String, BotInfo>>(){}.getType());
+			return gson.fromJson(reader, new TypeToken<Map<String, BotInfo>>() {
+			}.getType());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

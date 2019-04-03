@@ -2,9 +2,11 @@ package org.jointheleague.discord_bot_example;
 
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
+import org.jointheleague.modules.CoinFlipMessageListener;
 import org.jointheleague.modules.PingMessageListener;
+import org.jointheleague.modules.QuitMessageListener;
 
-public class Bot  {
+public class Bot {
 	private String token;
 	private String channelName;
 	DiscordApi api;
@@ -18,11 +20,10 @@ public class Bot  {
 		api = new DiscordApiBuilder().setToken(token).login().join();
 		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
 		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Bot Connected"));
-		
-		//add Listeners
+
+		api.addMessageCreateListener(new QuitMessageListener(channelName));
 		api.addMessageCreateListener(new PingMessageListener(channelName));
+		api.addMessageCreateListener(new CoinFlipMessageListener(channelName));
 	}
 
 }
-
-

@@ -1,13 +1,8 @@
 package org.jointheleague.discord_bot_example;
 
 import java.util.Map;
+import java.util.Scanner;
 
-/**
- * 
- * 
- * @author keithgroves
- *
- */
 public class Launcher {
 	public static void main(String[] args) {
 		if (args.length == 0) {
@@ -20,7 +15,7 @@ public class Launcher {
 		Map<String, BotInfo> map = Utilities.loadBotsFromJson();
 		for (String name : args) {
 			BotInfo n = map.get(name);
-			new Bot(n.getToken(), n.getChannel()).connect();
+			new Bot("NTYyNzk5MzE1MTA2Mzk4MjIw.XKQCEA.lYPqydXtQKLLbaJmR2RE0cpnUDM", "oliver-test").connect();
 		}
 	}
 }
