@@ -12,10 +12,11 @@ public class Launcher {
 	}
 
 	public void launch(String[] args) {
-		Map<String, BotInfo> map = Utilities.loadBotsFromJson();
+		//Map<String, BotInfo> map = Utilities.loadBotsFromJson();
 		for (String name : args) {
-			BotInfo n = map.get(name);
+			//BotInfo n = map.get(name);
 			new Bot("NTYyNzk5MzE1MTA2Mzk4MjIw.XKQCEA.lYPqydXtQKLLbaJmR2RE0cpnUDM", "oliver-test").connect();
+			new Bot("NTYyNzk5MzE1MTA2Mzk4MjIw.XKQCEA.lYPqydXtQKLLbaJmR2RE0cpnUDM", "talk-to-pathfinder").connect();
 		}
 	}
 }
