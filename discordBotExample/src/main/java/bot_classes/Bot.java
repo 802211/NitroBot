@@ -1,11 +1,12 @@
-package org.jointheleague.discord_bot_example;
+package bot_classes;
 
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
-import org.jointheleague.modules.CoinFlipMessageListener;
-import org.jointheleague.modules.PingMessageListener;
-import org.jointheleague.modules.PlayRPSMessageListener;
-import org.jointheleague.modules.QuitMessageListener;
+
+import command_classes.CoinFlipMessageListener;
+import command_classes.PingMessageListener;
+import command_classes.PlayRPSMessageListener;
+import command_classes.QuitMessageListener;
 
 public class Bot {
 	private String token;
@@ -23,8 +24,8 @@ public class Bot {
 		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Hello Friends!"));
 
 		api.addMessageCreateListener(new QuitMessageListener(channelName));
-		api.addMessageCreateListener(new PingMessageListener(channelName));
-		api.addMessageCreateListener(new PlayRPSMessageListener(channelName));
+		api.addMessageCreateListener(new PingMessageListener(channelName));	
 		api.addMessageCreateListener(new CoinFlipMessageListener(channelName));
+		api.addMessageCreateListener(new PlayRPSMessageListener(channelName));
 	}
 }

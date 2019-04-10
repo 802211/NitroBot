@@ -1,4 +1,4 @@
-package org.jointheleague.modules;
+package command_classes;
 
 import org.javacord.api.event.message.MessageCreateEvent;
 

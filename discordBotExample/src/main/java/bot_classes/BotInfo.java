@@ -1,4 +1,4 @@
-package org.jointheleague.discord_bot_example;
+package bot_classes;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

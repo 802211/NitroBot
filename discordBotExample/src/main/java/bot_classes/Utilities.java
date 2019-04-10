@@ -1,4 +1,4 @@
-package org.jointheleague.discord_bot_example;
+package bot_classes;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
