@@ -3,6 +3,7 @@ package bot_classes;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
+import command_classes.AssignRoleMessageListener;
 import command_classes.CoinFlipMessageListener;
 import command_classes.KickMessageListener;
 import command_classes.PingMessageListener;
@@ -29,5 +30,6 @@ public class Bot {
 		api.addMessageCreateListener(new CoinFlipMessageListener(channelName));
 		api.addMessageCreateListener(new PlayRPSMessageListener(channelName));
 		api.addMessageCreateListener(new KickMessageListener(channelName));
+		api.addMessageCreateListener(new AssignRoleMessageListener(channelName));
 	}
 }
