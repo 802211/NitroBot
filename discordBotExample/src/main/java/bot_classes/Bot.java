@@ -23,7 +23,7 @@ public class Bot {
 	public void connect() {
 		api = new DiscordApiBuilder().setToken(token).login().join();
 		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
-		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Hello Friends!"));
+		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Nitro On!"));
 
 		api.addMessageCreateListener(new QuitMessageListener(channelName));
 		api.addMessageCreateListener(new PingMessageListener(channelName));	
