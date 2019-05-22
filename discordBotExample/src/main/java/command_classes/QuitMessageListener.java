@@ -5,7 +5,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 public class QuitMessageListener extends CustomMessageCreateListener {
 
 	private static final String COMMAND = "!quit";
-	private static final String RESPONSE = "Goodbye Friends!";
+	private static final String RESPONSE = "Nitro Off!";
 
 	public QuitMessageListener(String channelName) {
 		super(channelName);
