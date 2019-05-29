@@ -25,8 +25,7 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 	}
 
 	public void handle(MessageCreateEvent event) {
-		
-		
+
 		if(stage == 0 && event.getMessageContent().equalsIgnoreCase(COMMAND)) {
 			server = event.getServer().orElse(null);
 			if(server ==  null) {
@@ -39,13 +38,13 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 				return;
 			}
 			
-			event.getChannel().sendMessage("Who would you like to receive a role?");
+			event.getChannel().sendMessage("Who would you like to receive a role? Please add \"user \" before mentioning the user.");
 			stage++;
 			
-		} else if (stage == 1 && event.getMessageContent().contains("user ")){
-	
+		} 
+		
+		else if (stage == 1 && event.getMessageContent().contains("user ")){
 			
-						
 			userMsg = event.getMessage();
 			if(userMsg == null) {
 				System.out.println("no user message");
@@ -53,6 +52,7 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 			}
 			
 			List<User> mentioned = userMsg.getMentionedUsers();
+			
 			if(mentioned == null || mentioned.isEmpty()) {
 				System.out.println("no mentioned users");
 				return;
@@ -66,9 +66,12 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 			
 			user = mentioned.get(0);
 			stage++;
-			event.getChannel().sendMessage("What role would you like to give them?");
+			event.getChannel().sendMessage("What role would you like to give them? Please add \"give role \" before mentioning the role.");
 		
-		} else if (stage == 2 && event.getMessageContent().contains("give role ")) {
+		} 
+		
+		else if (stage == 2 && event.getMessageContent().contains("give role ")) {
+
 			roleMsg = event.getMessage();
 			if(roleMsg == null) {
 				System.out.println("no role message");
@@ -84,7 +87,7 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 			role = roles.get(0);
 			List<Role> serverRoles = server.getRoles();
 			if(!serverRoles.contains(role) || !server.canManageRole(user, role)) {
-				event.getChannel().sendMessage("cannot give role to person lol");
+				event.getChannel().sendMessage("You cannot give that role to that person due to the role hierarchy.");
 				return;
 			}
 			stage = 0;
@@ -101,7 +104,7 @@ public class AssignRoleMessageListener extends CustomMessageCreateListener{
 			if(result.isCompletedExceptionally() || result.isCancelled()) {
 				event.getChannel().sendMessage("failed to complete");
 			} else {
-				event.getChannel().sendMessage("role completed");
+				event.getChannel().sendMessage("Role Given!");
 			}
 		}	
 	}
