@@ -2,10 +2,10 @@ package command_classes;
 
 import org.javacord.api.event.message.MessageCreateEvent;
 
-public class DadMode extends CustomMessageCreateListener{
+public class DadModeListener extends CustomMessageCreateListener{
 	int stage = 0;
 	
-	public DadMode(String channelName) {
+	public DadModeListener(String channelName) {
 		super(channelName);
 		// TODO Auto-generated constructor stub
 	}
