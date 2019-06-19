@@ -11,6 +11,7 @@ import command_classes.NicknameListener;
 import command_classes.PingMessageListener;
 import command_classes.PlayRPSMessageListener;
 import command_classes.QuitMessageListener;
+import command_classes.RollDiceMessageListener;
 import command_classes.SolveQuadraticListener;
 
 public class Bot {
@@ -37,5 +38,6 @@ public class Bot {
 		api.addMessageCreateListener(new DadModeListener(channelName));
 		api.addMessageCreateListener(new NicknameListener(channelName));
 		api.addMessageCreateListener(new SolveQuadraticListener(channelName));
+		api.addMessageCreateListener(new RollDiceMessageListener(channelName));
 	}
 }
