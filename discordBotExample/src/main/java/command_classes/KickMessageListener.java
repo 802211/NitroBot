@@ -37,11 +37,12 @@ public class KickMessageListener extends CustomMessageCreateListener {
 					Message userMsg = event.getMessage();
 					List<User> mentioned = userMsg.getMentionedUsers();
 					user = mentioned.get(0);
-					CompletableFuture<Void> cf =	event.getServer().get().kickUser(user);
+					CompletableFuture<Void> cf = event.getServer().get().kickUser(user);
 					
 					if(cf.isCompletedExceptionally())
 					event.getChannel().sendMessage("Failed to Kick \"" + user.getName() + "\"");
-					else
+				
+					else 
 					event.getChannel().sendMessage("Done Kicking \"" + user.getName() + "\"");
 				}
 			}
