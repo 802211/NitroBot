@@ -6,6 +6,7 @@ import org.javacord.api.DiscordApiBuilder;
 import command_classes.AssignRoleMessageListener;
 import command_classes.CoinFlipMessageListener;
 import command_classes.DadModeListener;
+import command_classes.HelpMessageListener;
 import command_classes.KickMessageListener;
 import command_classes.NicknameListener;
 import command_classes.PingMessageListener;
@@ -39,5 +40,6 @@ public class Bot {
 		api.addMessageCreateListener(new NicknameListener(channelName));
 		api.addMessageCreateListener(new SolveQuadraticListener(channelName));
 		api.addMessageCreateListener(new RollDiceMessageListener(channelName));
+		api.addMessageCreateListener(new HelpMessageListener(channelName));
 	}
 }
