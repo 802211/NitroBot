@@ -18,9 +18,9 @@ public class CoinFlipMessageListener extends CustomMessageCreateListener {
 			Random r = new Random();
 			int f = r.nextInt(100);
 			if (f % 2 == 0) {
-				event.getChannel().sendMessage("You Got Heads, Friend!");
+				event.getChannel().sendMessage("You Got Heads");
 			} else {
-				event.getChannel().sendMessage("You Got Tails, Freind!");
+				event.getChannel().sendMessage("You Got Tails");
 			}
 		}
 	}

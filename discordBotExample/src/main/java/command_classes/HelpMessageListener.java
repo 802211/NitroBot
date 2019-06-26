@@ -13,7 +13,7 @@ public class HelpMessageListener extends CustomMessageCreateListener {
 	@Override
 	public void handle(MessageCreateEvent event) {
 		if(event.getMessageContent().equalsIgnoreCase(COMMAND)) {
-			event.getChannel().sendMessage("Here are the different commands for the Nitro Bot: \n"
+			event.getChannel().sendMessage("Here are the different commands for the Tide Bot: \n"
 					+ "!help - gets a list of commands"
 					+ "\n !dadon - turns on the dad mode"
 					+ "\n !dadoff - turns off the dad mode"
