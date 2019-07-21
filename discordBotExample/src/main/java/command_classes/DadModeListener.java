@@ -11,7 +11,7 @@ public class DadModeListener extends CustomMessageCreateListener{
 	}
 	
 	public void handle(MessageCreateEvent event) {
-		if(event.getMessageAuthor().getDisplayName().equals("Nitro")) {
+		if(event.getMessageAuthor().getDisplayName().equals("Tide")) {
 			return;
 		}
 		
